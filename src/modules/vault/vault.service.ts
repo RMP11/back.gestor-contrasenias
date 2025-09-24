@@ -54,4 +54,10 @@ export class VaultService {
       },
     });
   }
+
+  async delete(userId: number) {
+    return this.prisma.vaultItem.delete({
+      where: { id: userId },
+    });
+  }
 }
