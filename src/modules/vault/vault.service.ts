@@ -39,9 +39,9 @@ export class VaultService {
   /**
    * Obtener todos los VaultItems de un usuario
    */
-  async getVaultItems(userId: number) {
+  async getVaultItems(userId: number, algorithm?: string) {
     return this.prisma.vaultItem.findMany({
-      where: { userId },
+      where: { userId, algorithm },
       select: {
         id: true,
         serviceName: true,
